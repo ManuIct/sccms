@@ -1,6 +1,7 @@
 namespace sccms.Models;
 
-public class Article
+
+public class Article : ICommentabile
 {
     public Article(string title, string text, DateTime publicationDate, Category category, Author author)
     {
@@ -8,12 +9,14 @@ public class Article
         Text = text;
         PublicationDate = publicationDate;
         Category = category;
-        Author = author; 
+        Author = author;
     }
     public string Title { get; set; }
     public string Text { get; set; }
     public DateTime PublicationDate { get; set; }
     public Category? Category { get; set; }
     public Author? Author { get; set; }
+
+    public List<Comment> Comments { get; set; } = new List<Comment>();
 
 }

@@ -1,6 +1,7 @@
+
 namespace sccms.Models;
 
-public class Author
+public class Author : ICommentabile
 {
     private static List<Author> authors = new List<Author>();
 
@@ -13,8 +14,9 @@ public class Author
     public string Name { get; set; }
     public string Surname { get; set; }
     public string FullName { get => $"{Name} {Surname}"; }
+    public List<Comment> Comments { get; set; } = new List<Comment>();
 
-    public static void Add(Author a)
+    internal static void Add(Author a)
     {
         authors.Add(a);
     }
