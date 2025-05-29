@@ -39,4 +39,4 @@ Console.WriteLine($"Commenti a: {Manager.Articles[0].Title}");
 foreach (var c in Manager.Articles[0].Comments)
 {
   Console.WriteLine($"{c.Text} - di {c.Author.FullName}");
-} 
+}  
